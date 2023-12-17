@@ -2,7 +2,7 @@
 import game from '../index.js';
 //логика - сами функции
 const brainPrime = () => {
-    const rules = 'Answer "yes" if the number is prime. Otherwise answer "no".';
+    const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     const gameFunction = () => {
         let question = Math.round(Math.random()*100);
         let correctAnswer = '';
