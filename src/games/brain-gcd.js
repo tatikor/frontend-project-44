@@ -1,5 +1,5 @@
 //импорт библиотек
-import readlineSync from 'readline-sync';
+import game from '../index.js';
 
 //логика - сами функции
 const NOD = (A) => {   
@@ -11,32 +11,17 @@ const NOD = (A) => {
      }
     return x;
 }
-
 const brainGcd = () => {
-    console.log('Welcome to the Brain Games!');
-    const userName = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${userName}!`);
-    console.log('Find the greatest common divisor of given numbers.');
-    for (let i=0; i<=2; i++) {
+    const rules = 'Find the greatest common divisor of given numbers.';
+    const gameFunction = () => {
     let randomNumber1 = Math.round(Math.random()*100);
     let randomNumber2 = Math.round(Math.random()*100);
-    console.log('Question: ', randomNumber1, randomNumber2);
-    const userAnswerStr = readlineSync.question('Your answer: ');
-    const userAnswer = Number(userAnswerStr);
-    let correctAnswer = NOD([randomNumber1, randomNumber2]);
-
-    if (correctAnswer === userAnswer) {
-         console.log("correct!");
-    } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
-        break;
-    }
-    if (i===2) {
-        console.log(`Congratulations, ${userName}!`);
-    }
-}
+    const question = randomNumber1 + ', ' + randomNumber2;
+    let correctAnswer = String(NOD([randomNumber1, randomNumber2]));
+return [question, correctAnswer];
 };
-
+game(rules, gameFunction)
+};
 export default brainGcd;
     
 

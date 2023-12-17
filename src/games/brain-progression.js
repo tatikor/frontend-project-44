@@ -1,6 +1,5 @@
 //импорт библиотек
-import readlineSync from 'readline-sync';
-
+import game from '../index.js';
 //логика - сами функции
 const makingArray = () => { 
     let firstNum = Math.round(Math.random()*100);
@@ -13,33 +12,18 @@ const makingArray = () => {
      }
     return array;
 }
-
 const brainProgression = () => {
-    console.log('Welcome to the Brain Games!');
-const userName = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${userName}!`);
-    console.log('What number is missing in the progression?');
-    for (let i=0; i<=2; i++) {
-    let array = makingArray();
-    let randomIndex = Math.floor(Math.random() * (array.length));
-    let x = array[randomIndex];
-    array[randomIndex] = '..';
-    console.log('Question: ' + array);
-    const userAnswerStr = readlineSync.question('Your answer: ');
-    const userAnswer = Number(userAnswerStr);
-    let correctAnswer = x;
-if (correctAnswer === userAnswer) {
-         console.log("correct!");
-    } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
-        break;
-    }
-    if (i===2) {
-        console.log(`Congratulations, ${userName}!`);
-    }
-    }
-}
-    
+    const rules = 'What number is missing in the progression?';
+    const gameFunction = () => {
+    let question = makingArray();
+    let randomIndex = Math.floor(Math.random() * (question.length));
+    let x = question[randomIndex];
+    question[randomIndex] = '..';
+    let correctAnswer = String(x);
+    return [question, correctAnswer];
+    };
+    game(rules, gameFunction)
+    };
 export default brainProgression;
 
     
