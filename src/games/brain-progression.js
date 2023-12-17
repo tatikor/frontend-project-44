@@ -20,7 +20,7 @@ const brainProgression = () => {
     let x = question[randomIndex];
     question[randomIndex] = '..';
     let correctAnswer = String(x);
-    return [question, correctAnswer];
+    return [question.join(' '), correctAnswer];
     };
     game(rules, gameFunction)
     };
