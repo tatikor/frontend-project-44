@@ -16,7 +16,7 @@ const brainGcd = () => {
     const gameFunction = () => {
     let randomNumber1 = Math.round(Math.random()*100);
     let randomNumber2 = Math.round(Math.random()*100);
-    const question = randomNumber1 + ', ' + randomNumber2;
+    const question = randomNumber1 + ' ' +randomNumber2;
     let correctAnswer = String(NOD([randomNumber1, randomNumber2]));
 return [question, correctAnswer];
 };
