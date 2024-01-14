@@ -3,12 +3,12 @@ import game from '../index.js';
 const brainCalc = () => {
   const rules = 'What is the result of the expression?';
   const gameFunction = () => {
-    let arr = ['+', '-', '*'];
-    let n = Math.floor(Math.random() * arr.length);
-    let firstNum = Math.round(Math.random() * 100);
-    let secondNum = Math.round(Math.random() * 100);
-    let exp = arr[n];
-    let question = firstNum + ' ' + exp + ' ' + secondNum;
+    const arr = ['+', '-', '*'];
+    const n = Math.floor(Math.random() * arr.length);
+    const firstNum = Math.round(Math.random() * 100);
+    const secondNum = Math.round(Math.random() * 100);
+    const exp = arr[n];
+    const question = firstNum + ' ' + exp + ' ' + secondNum;
     let correctAnswer = '';
     if (exp === '+') {
       correctAnswer += firstNum + secondNum;
