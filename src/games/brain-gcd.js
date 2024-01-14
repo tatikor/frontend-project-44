@@ -1,9 +1,9 @@
 import game from '../index.js';
 
 const NOD = (A) => {
-  let n = A.length;
+  const n = A.length;
   let x = Math.abs(A[0]);
-  for (let i = 1; i < n; i += 1) { 
+  for (let i = 1; i < n; i += 1) {
     let y = Math.abs(A[i]);
     while (x && y) {
       x > y ? x %= y : y %= x;
