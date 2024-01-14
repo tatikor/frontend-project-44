@@ -5,7 +5,7 @@ const makingArray = () => {
   const arrlength = Math.ceil(Math.random() * 5 + 5);
   const step = Math.ceil(Math.random() * 5 + 5);
   const array = [firstNum];
-  for (let i = 0; i <= arrlength; i+=1) {
+  for (let i = 0; i <= arrlength; i += 1) {
     const nextNum = array[i] + step;
     array.push(nextNum);
   }

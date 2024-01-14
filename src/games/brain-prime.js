@@ -6,7 +6,7 @@ const brainPrime = () => {
     let question = Math.round(Math.random() * 100);
     let correctAnswer = '';
     let result = 0;
-    for (let x = 1; x <= question; x++) {
+    for (let x = 1; x <= question; x+=1) {
       if (question % x === 0) {
         result += 1;
       }

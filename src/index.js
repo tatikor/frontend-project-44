@@ -5,7 +5,7 @@ const game = (rules, gameFunction) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(rules);
-  for (let i = 0; i <= 2; i+=1) {
+  for (let i = 0; i <= 2; i += 1) {
     const [question, correctAnswer] = gameFunction();
     console.log('Question: ' + question);
     const userAnswer = readlineSync.question('Your answer: ');
