@@ -1,10 +1,9 @@
-//импорт библиотек
 import game from '../index.js';
-//логика - сами функции
+
 const makingArray = () => { 
-    let firstNum = Math.round(Math.random()*100);
-    let arrlength = Math.ceil(Math.random()*5 +5);
-    let step = Math.ceil(Math.random()*5 +5);
+    let firstNum = Math.round(Math.random() * 100);
+    let arrlength = Math.ceil(Math.random() * 5 + 5);
+    let step = Math.ceil(Math.random() * 5 + 5);
     let array = [firstNum];  
     for (let i=0; i<=arrlength; i++) {
         let nextNum = array[i] + step;
@@ -25,7 +24,3 @@ const brainProgression = () => {
     game(rules, gameFunction)
     };
 export default brainProgression;
-
-    
-
-
