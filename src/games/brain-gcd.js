@@ -6,7 +6,12 @@ const NOD = (A) => {
   for (let i = 1; i < n; i += 1) {
     let y = Math.abs(A[i]);
     while (x && y) {
-      x > y ? x %= y : y %= x;
+      if (x > y) {
+        x %= y;
+      }
+      else {
+        y %= x;
+      }
     }
     x += y;
   }
@@ -17,7 +22,7 @@ const brainGcd = () => {
   const gameFunction = () => {
     const randomNumber1 = Math.round(Math.random() * 100);
     const randomNumber2 = Math.round(Math.random() * 100);
-    const question = randomNumber1 + ' ' + randomNumber2;
+    const question = `${randomNumber1} ${randomNumber2}`;
     const correctAnswer = String(NOD([randomNumber1, randomNumber2]));
     return [question, correctAnswer];
   };

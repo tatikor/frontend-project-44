@@ -3,7 +3,7 @@ import game from '../index.js';
 const brainPrime = () => {
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const gameFunction = () => {
-    let question = Math.round(Math.random() * 100);
+    const question = Math.round(Math.random() * 100);
     let correctAnswer = '';
     let result = 0;
     for (let x = 1; x <= question; x += 1) {

@@ -8,7 +8,7 @@ const brainCalc = () => {
     const firstNum = Math.round(Math.random() * 100);
     const secondNum = Math.round(Math.random() * 100);
     const exp = arr[n];
-    const question = firstNum + ' ' + exp + ' ' + secondNum;
+    const question = `${firstNum} ${exp} ${secondNum}`;
     let correctAnswer = '';
     if (exp === '+') {
       correctAnswer += firstNum + secondNum;
