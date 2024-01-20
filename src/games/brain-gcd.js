@@ -8,8 +8,7 @@ const NOD = (A) => {
     while (x && y) {
       if (x > y) {
         x %= y;
-      }
-      else {
+      } else {
         y %= x;
       }
     }
