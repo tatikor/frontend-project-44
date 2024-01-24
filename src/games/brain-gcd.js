@@ -1,4 +1,4 @@
-import playingGame from '../index.js';
+import playGame from '../index.js';
 import getRandomNumber from '../more_functions.js';
 
 const nod = (A) => {
