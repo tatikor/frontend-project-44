@@ -1,17 +1,23 @@
-import game from '../index.js';
+import playGame from '../index.js';
+import getRandomNumber from '../more_functions.js';
 
-const brainEven = () => {
-  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const gameFunction = () => {
-    const question = Math.round(Math.random() * 100);
-    let correctAnswer = '';
+const checkIfEven = (question) => {
+  let correctAnswer = '';
     if (question % 2 === 0) {
       correctAnswer = 'yes';
     } else {
       correctAnswer = 'no';
     }
+    return correctAnswer;
+}
+
+const playBrainEven = () => {
+  const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const getQuestionAndAnswer = () => {
+    const question = getRandomNumber();
+    const correctAnswer = checkIfEven(question);
     return [question, correctAnswer];
   };
-  game(rules, gameFunction);
+  playGame(rule, getQuestionAndAnswer);
 };
-export default brainEven;
+export default playBrainEven;

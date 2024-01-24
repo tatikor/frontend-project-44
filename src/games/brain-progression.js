@@ -1,9 +1,12 @@
-import game from '../index.js';
+import playingGame from '../index.js';
+import getRandomNumber from '../more_functions.js';
 
-const makingArray = () => {
-  const firstNum = Math.round(Math.random() * 100);
-  const arrlength = Math.ceil(Math.random() * 5 + 5);
-  const step = Math.ceil(Math.random() * 5 + 5);
+const getShortNumber = () => {
+  const minNum = 5;
+  const shortNumber = Math.floor(Math.random() * minNum + minNum);
+  return shortNumber;
+};
+const makeArray = (firstNum, arrlength, step) => {
   const array = [firstNum];
   for (let i = 0; i <= arrlength; i += 1) {
     const nextNum = array[i] + step;
@@ -11,16 +14,19 @@ const makingArray = () => {
   }
   return array;
 };
-const brainProgression = () => {
-  const rules = 'What number is missing in the progression?';
-  const gameFunction = () => {
-    const question = makingArray();
+const playBrainProgression = () => {
+  const rule = 'What number is missing in the progression?';
+  const getQuestionAndAnswer = () => {
+    const firstNum = getRandomNumber();
+    const arrlength = getShortNumber();
+    const step = getShortNumber();
+    const question = makeArray(firstNum, arrlength, step);
     const randomIndex = Math.floor(Math.random() * (question.length));
     const x = question[randomIndex];
     question[randomIndex] = '..';
     const correctAnswer = String(x);
     return [question.join(' '), correctAnswer];
   };
-  game(rules, gameFunction);
+  playingGame(rule, getQuestionAndAnswer);
 };
-export default brainProgression;
+export default playBrainProgression;

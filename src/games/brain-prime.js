@@ -1,9 +1,7 @@
-import game from '../index.js';
+import playGame from '../index.js';
+import getRandomNumber from '../more_functions.js';
 
-const brainPrime = () => {
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const gameFunction = () => {
-    const question = Math.round(Math.random() * 100);
+const checkIfPrime = (question) => {
     let correctAnswer = '';
     let result = 0;
     for (let x = 1; x <= question; x += 1) {
@@ -15,9 +13,17 @@ const brainPrime = () => {
       correctAnswer = 'yes';
     } else {
       correctAnswer = 'no';
-    }
+    }  
+    return correctAnswer;
+}
+
+const playBrainPrime = () => {
+  const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const getQuestionAndAnswer = () => {
+    const question = getRandomNumber();
+const correctAnswer = checkIfPrime(question);
     return [question, correctAnswer];
   };
-  game(rules, gameFunction);
+  playGame(rule, getQuestionAndAnswer);
 };
-export default brainPrime;
+export default playBrainPrime;

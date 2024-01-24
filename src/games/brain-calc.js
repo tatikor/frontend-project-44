@@ -1,15 +1,8 @@
-import game from '../index.js';
+import playGame from '../index.js';
+import getRandomNumber from '../more_functions.js';
 
-const brainCalc = () => {
-  const rules = 'What is the result of the expression?';
-  const gameFunction = () => {
-    const arr = ['+', '-', '*'];
-    const n = Math.floor(Math.random() * arr.length);
-    const firstNum = Math.round(Math.random() * 100);
-    const secondNum = Math.round(Math.random() * 100);
-    const exp = arr[n];
-    const question = `${firstNum} ${exp} ${secondNum}`;
-    let correctAnswer = '';
+const findCorrectAnswer = (firstNum, exp, secondNum) => {
+   let correctAnswer = '';
     if (exp === '+') {
       correctAnswer += firstNum + secondNum;
     }
@@ -19,8 +12,21 @@ const brainCalc = () => {
     if (exp === '*') {
       correctAnswer += firstNum * secondNum;
     }
+    return correctAnswer;
+}
+
+const playBrainCalc = () => {
+  const rule = 'What is the result of the expression?';
+  const getQuestionAndAnswer = () => {
+    const arr = ['+', '-', '*'];
+    const n = Math.floor(Math.random() * arr.length);
+    const firstNum = getRandomNumber();
+    const secondNum = getRandomNumber();
+    const exp = arr[n];
+    const question = `${firstNum} ${exp} ${secondNum}`;
+    const correctAnswer = findCorrectAnswer(firstNum, exp, secondNum);
     return [question, correctAnswer];
   };
-  game(rules, gameFunction);
+  playGame(rule, getQuestionAndAnswer);
 };
-export default brainCalc;
+export default playBrainCalc;
