@@ -2,18 +2,18 @@ import playGame from '../index.js';
 import getRandomNumber from '../more_functions.js';
 
 const findCorrectAnswer = (firstNum, exp, secondNum) => {
-   let correctAnswer = '';
-    if (exp === '+') {
-      correctAnswer += firstNum + secondNum;
-    }
-    if (exp === '-') {
-      correctAnswer += firstNum - secondNum;
-    }
-    if (exp === '*') {
-      correctAnswer += firstNum * secondNum;
-    }
-    return correctAnswer;
-}
+  let correctAnswer = '';
+  if (exp === '+') {
+    correctAnswer += firstNum + secondNum;
+  }
+  if (exp === '-') {
+    correctAnswer += firstNum - secondNum;
+  }
+  if (exp === '*') {
+    correctAnswer += firstNum * secondNum;
+  }
+  return correctAnswer;
+};
 
 const playBrainCalc = () => {
   const rule = 'What is the result of the expression?';
