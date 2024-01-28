@@ -4,7 +4,6 @@ import getRandomNumber from '../helpers.js';
 const isEven = (question) => {
   return question % 2 === 0 ? true : false;
 };
-
 const playBrainEven = () => {
   const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
   const getQuestionAndAnswer = () => {
