@@ -1,5 +1,5 @@
-import playingGame from '../index.js';
-import getRandomNumber from '../more_functions.js';
+import runGame from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const getShortNumber = () => {
   const minNum = 5;
@@ -27,6 +27,6 @@ const playBrainProgression = () => {
     const correctAnswer = String(x);
     return [question.join(' '), correctAnswer];
   };
-  playingGame(rule, getQuestionAndAnswer);
+  runGame(rule, getQuestionAndAnswer);
 };
 export default playBrainProgression;

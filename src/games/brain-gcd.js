@@ -1,5 +1,5 @@
-import playGame from '../index.js';
-import getRandomNumber from '../more_functions.js';
+import runGame from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const nod = (A) => {
   const n = A.length;
@@ -26,6 +26,6 @@ const playBrainGcd = () => {
     const correctAnswer = String(nod([randomNumber1, randomNumber2]));
     return [question, correctAnswer];
   };
-  playGame(rule, getQuestionAndAnswer);
+  runGame(rule, getQuestionAndAnswer);
 };
 export default playBrainGcd;

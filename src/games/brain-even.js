@@ -1,5 +1,5 @@
-import playGame from '../index.js';
-import getRandomNumber from '../more_functions.js';
+import runGame from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const checkIfEven = (question) => {
   let correctAnswer = '';
@@ -18,6 +18,6 @@ const playBrainEven = () => {
     const correctAnswer = checkIfEven(question);
     return [question, correctAnswer];
   };
-  playGame(rule, getQuestionAndAnswer);
+  runGame(rule, getQuestionAndAnswer);
 };
 export default playBrainEven;

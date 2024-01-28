@@ -1,5 +1,5 @@
-import playGame from '../index.js';
-import getRandomNumber from '../more_functions.js';
+import runGame from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const findCorrectAnswer = (firstNum, exp, secondNum) => {
   let correctAnswer = '';
@@ -27,6 +27,6 @@ const playBrainCalc = () => {
     const correctAnswer = findCorrectAnswer(firstNum, exp, secondNum);
     return [question, correctAnswer];
   };
-  playGame(rule, getQuestionAndAnswer);
+  runGame(rule, getQuestionAndAnswer);
 };
 export default playBrainCalc;

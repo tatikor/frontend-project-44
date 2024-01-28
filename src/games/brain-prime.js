@@ -1,5 +1,5 @@
-import playGame from '../index.js';
-import getRandomNumber from '../more_functions.js';
+import runGame from '../index.js';
+import getRandomNumber from '../helpers.js';
 
 const checkIfPrime = (question) => {
   let correctAnswer = '';
@@ -24,6 +24,6 @@ const playBrainPrime = () => {
     const correctAnswer = checkIfPrime(question);
     return [question, correctAnswer];
   };
-  playGame(rule, getQuestionAndAnswer);
+  runGame(rule, getQuestionAndAnswer);
 };
 export default playBrainPrime;
