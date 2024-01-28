@@ -11,7 +11,7 @@ const findCorrectAnswer = (firstNum, exp, secondNum) => {
       return String(firstNum * secondNum);
     default:
       throw new Error(`Error : ${exp}!`);
-  };
+  }
 };
 
 const playBrainCalc = () => {

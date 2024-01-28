@@ -2,7 +2,7 @@ import runGame from '../index.js';
 import getRandomNumber from '../helpers.js';
 
 const findGcd = (num1, num2) => {
-  const arr =[];
+  const arr = [];
   let count = 0;
   arr.push(count);
   const maxNum = Math.max(num1, num2);
