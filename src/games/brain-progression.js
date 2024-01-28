@@ -16,7 +16,7 @@ const playBrainProgression = () => {
     const arrlength = getRandomNumber(5, 10);
     const step = getRandomNumber(5, 15);
     const question = makeArray(firstNum, arrlength, step);
-    const randomIndex = getRandomNumber(1, question.length);
+    const randomIndex = getRandomNumber(1, question.length - 1);
     const x = question[randomIndex];
     question[randomIndex] = '..';
     const correctAnswer = String(x);
