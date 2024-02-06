@@ -1,7 +1,7 @@
 import runGame from '../index.js';
 import getRandomNumber from '../helpers.js';
 
-const isEven = (question) => { return question % 2 === 0; };
+const isEven = (question) => question % 2 === 0;
 const playBrainEven = () => {
   const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
   const getQuestionAndAnswer = () => {
